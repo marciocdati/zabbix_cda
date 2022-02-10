@@ -12,8 +12,7 @@ dpkg -i zabbix-release_5.4-1+debian11_all.deb
 apt update
 
 #Install Zabbix server, frontend, agent
-apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent
-
+apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent -y
 #Configure the database for Zabbix server
 #Edit file /etc/zabbix/zabbix_server.conf
 sed -i 's/\#\ DBPassword=/DBPassword=cd\@gu\@\/30/ g ' /etc/zabbix/zabbix_server.conf
@@ -23,8 +22,8 @@ sed -i 's/\#\ DBPassword=/DBPassword=cd\@gu\@\/30/ g ' /etc/zabbix/zabbix_server
 #Edit file /etc/zabbix/nginx.conf, uncomment and set 'listen' and 'server_name' directives.
 sed -i 's/^#// g ' /etc/zabbix/nginx.conf
 sed -i 's/example.com/zabbix.casasdaagua.com.br/ g ' /etc/zabbix/nginx.conf
-cp /etc/zabbix/nginx.conf /etc/nginx/sites-avaliable/zabbix.conf
-ln -s /etc/nginx/sites-avaliable/zabbix.conf /etc/nginx/sites-enabled/zabbix.conf
+cp /etc/zabbix/nginx.conf /etc/nginx/sites-available/zabbix.conf
+ln -s /etc/nginx/sites-available/zabbix.conf /etc/nginx/sites-enabled/zabbix.conf
 
 #Start Zabbix server and agent processes
 #Start Zabbix server and agent processes and make it start at system boot.
