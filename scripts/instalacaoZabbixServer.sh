@@ -57,7 +57,7 @@ echo "#        Sair do console do MySql/Mariadb                                 
 echo "#        -> exit;                                                                #"
 echo "#                                                                                #"
 echo "#        Popular o banco de dados                                                #"
-echo "#        -> arquivosql="/usr/share/doc/zabbix-sql-scripts/mysql/create.sql.gz"   #" 
+echo "#        -> arquivosql=/usr/share/doc/zabbix-sql-scripts/mysql/create.sql.gz     #" 
 echo "#        -> zcat \$arquivosql | mysql -uzabbix -Dzabbix  -p                      #"
 echo "#                                                                                #"
 echo "#        * Será solicitado a senha apos a execução do comando acima              #"
